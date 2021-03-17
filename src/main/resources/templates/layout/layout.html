@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${session.lang}" 
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head th:replace="fragments/header :: header">
+  <meta charset="utf-8">
+  <title>자바대학교 멍멍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+</head>
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="active item" href="index">Home</a>
+    <a href="goodsPageList" class="item">굿즈 리스트</a>
+    <a href="infiniteScroll" class="item">무한스크롤테스트</a>
+    <a href="goodsDetail2" class="item">굿즈 디테일</a>
+    <a href="goodsWrite" class="item">굿즈 인서트</a>
+    <a href="delivery" class="item">배송 조회</a>
+    <a href="boardPageList" class="item">학과 게시판</a>
+    <a href="boardWrite" class="item">글쓰기</a>
+    <a href="memberList" class="item">회원관리</a>
+    <a href="memberUpdate" class="item">정보수정</a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui button" href="login">Log in</a>
+      </div>
+      <div class="item">
+        <a class="ui primary button" href="memberInsert">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">Work</a>
+  <a class="item">Company</a>
+  <a class="item">Careers</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+     <div class="swiper-container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="active item">Home</a>
+		<a href="goodsPageList" class="item">굿즈 리스트</a>
+		<a href="goodsDetail2" class="item">굿즈 디테일</a>
+		<a href="goodsWrite" class="item">굿즈 인서트</a>
+	    <a href="delivery" class="item">배송 조회</a>
+	    <a href="boardPageList" class="item">학과 게시판</a>
+	    <a href="boardWrite" class="item">글쓰기</a>
+	    <a href="memberList" class="item">회원관리</a>
+	    <a href="memberUpdate" class="item">정보수정</a>
+        <div class="right item">
+          <a class="ui inverted button" href="login">Log in</a>
+          <a class="ui inverted button">Sign Up</a>
+        </div>
+      </div>
+    </div>
+    
+      <div class="ui text container">
+      <h1 class="ui inverted header">
+        자바대학교
+      </h1>
+      <h2>AI와 SW를 선도하는 인싸대학</h2>
+      
+      
+ 
+      <div class="ui huge primary button" style="margin-bottom:25px"> 로그인 <i class="right arrow icon"></i></div>
+    </div>
+
+
+   <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/school3.jpg" style="width:100%"></div>
+      <div class="swiper-slide"><img src="images/school9.jpg" style="width:100%"></div>
+      <div class="swiper-slide"><img src="images/school8.jpg" style="width:100%"></div>
+      <div class="swiper-slide"><img src="images/school1.jpg" style="width:100%"></div>
+      <div class="swiper-slide"><img src="images/school2.jpg" style="width:100%"></div>
+      <div class="swiper-slide"><img src="images/school4.jpg" style="width:100%"></div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  
+  
+  
+
+  
+   
+ 
+    </div>
+    
+
+  </div>
+  
+  
+  
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>

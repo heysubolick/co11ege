@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.lang}"
+	th:lang="${session.lang}"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/layout">
+<head>
+</head>
+<body>
+<div layout:fragment="content">
+<form class="ui large form" id="memberinsertform" method="POST" action="member_insertSave"
+            data-parsley-validate="true">
+	<div class="ui grid center aligned">
+		<div class="five wide column">
+		</div>
+		<div class="five wide column">
+		
+			<div class="field center aligned" style="margin-top:30px">
+				<h3> 회원가입 </h3>
+			</div>
+		
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="mail icon"></i>
+					<input type="hidden" id="emailconfirm" name="emailconfirm" value="n">
+					<input type="email" id="email" name="email" placeholder="email"  required>
+					<button type="button" class="ui teal right button confirm">
+							중복검사</button>
+				</div>
+			</div>
+		
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="id card outline icon"></i>
+					<input type="text" name="name" class="meminsertfocus"
+						maxlength="255" required placeholder="이름" onclick="confirm_email();">
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="lock icon"></i>
+					<input type="password" name="password"
+						id="password" required data-parsley-validation-threshold="1"
+						placeholder="비밀번호">
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="lock icon"></i>
+					<input type="password" name="repassword"
+						id="repassword" required data-parsley-validation-threshold="1"
+						placeholder="비밀번호 확인">
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="mobile alternate icon"></i>
+					<input type="text" name="phone1" required id="phone_Number" placeholder="모바일폰 번호">
+				</div>
+			</div>
+			
+			<div class="field" style="margin-top:10px">
+				<div class="ui checkbox">
+  					<input type="checkbox" name="example">
+  					<label>Make my profile visible</label>
+				</div>
+			</div>
+			
+			<div class="field" style="margin-top:20px">
+				<span><button type="submit" id="membersavebtn" class="ui primary basic button" style="width:48%">저장</button></span>
+				<span><button type="button" class="ui negative  basic button" onclick="location.href='index'" style="width:48%">취소</button></span>
+			</div>
+			
+		</div>
+		<div class="five wide column">
+		</div>
+		
+		<div class="ui modal">
+			<div class="header">Header</div>
+			<div class="image content">
+				<img class="image">
+				<div class="description">
+					<p></p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</form>		
+</div>
+</body>
+</html>
+

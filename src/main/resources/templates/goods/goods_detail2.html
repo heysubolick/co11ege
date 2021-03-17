@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.lang}"
+	th:lang="${session.lang}"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/layout">
+<head>
+<script src="/js/aiappproject.js"></script>
+<script
+	src="https://cdn.tiny.cloud/1/1in9hzsqug5gwpl0vwku0rsdmw8w2equelp9j08kmfa49lxw/tinymce/5/tinymce.min.js"
+	referrerpolicy="origin"></script>
+</head>
+<body>
+	<div layout:fragment="content">
+		<form class="ui large form" method="POST" action="boardUpdateSave"
+			enctype="multipart/form-data" data-parsley-validate="true">
+			<div class="ui grid">
+				<div class="sixteen column row ui grid middle aligned center aligned" style="background-color: #FFFFFF;">
+					<div class="ten wide column" style="height:100px">
+						<img src="images/
+					</div>
+					<div class="five wide column" style="margin-top: 5px">
+						<button type="button" class="ui teal button" onclick="location.href='index';">학교 홈페이지 바로가기</button>
+					</div>
+				</div>
+				  <div class="row" style="background-color: #000000;color: #FFFFFF;">
+    			<div class="column">버튼1 버튼2</div>
+			</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<div class="ui sixteen wide column grid center aligned" style="background-color:#FFFFFF;">
+			<div class="one wide column"></div>
+				<div class="six wide column" style="background-color: #FFFFFF; height: 700px">
+					<div class="field">
+						<div class="fluid ui input" style="width: 500px; margin-top: 50px">
+							<img th:src="${goods.g_attach}">
+						</div>
+					</div>
+				</div>
+				<div class="one wide column"></div>
+				<div class="six wide column"
+					style="background-color: #FFFFFF; height: 700px; text-align: left;">
+					<div th:text="${goods.g_title}" style="font-size: 25px; font:bold; margin-bottom: 25px; margin-top: 50px;"></div>
+					<div th:text="${goods.g_price}+원" style="font-size: 18px; margin-bottom: 20px"></div>
+						<hr align="left">
+					<div th:text="${goods.g_content}" style="font-size: 14px; margin-top: 20px; margin-bottom: 20px"></div>
+					<div class="ui segment" style="background-color:#F8F8F8;">
+ 					 <p>수량  </p>
+ 					 <hr align="left">
+ 					 <Input type="number" value="1" style="width:100px;"/> <span th:text="${goods.g_price}+원" style="display: right; font-size: 18px; float:right;"></span>
+					</div>
+					<div style="margin-top: 30px; margin-bottom:30px;">총 상품금액(  개)<span th:text="${goods.g_price}+원" style="text-align: center; font-size: 18px;float:right;" ></span></div>
+
+					<div class="ui animated black button" tabindex="0">
+						<div class="visible content">구매하기</div>
+						<div class="hidden content"> <i class="dollar sign icon" ></i>
+						</div>
+					</div>
+					<div class="ui vertical animated button" tabindex="0" style="background-color:#FFFFFF; border:1px solid;">
+						<div class="visible content">장바구니</div>
+						<div class="hidden content"><i class="shopping cart icon"></i>
+						</div>
+					</div>
+					<div class="ui animated fade button" tabindex="0" style="background-color:#FFFFFF; border:1px solid;">
+						<div class="visible content">찜하기</div>
+						<div class="hidden content"><i class="heart icon"></i>
+						</div>
+				</div>
+			</div>
+			<div class="one wide column"></div>
+			<div class="ui sixteen wide column" style="background-color: #FFFFFF;height: 500px">
+				<div class="ui five wide column"  style="text-align: center; ">
+						<div class="ui three item menu" >
+							<a class="item flex"> 상품설명 </a> 
+							<a class="item active"> 후기 </a>
+							<a class="item"> Q&A </a>
+						</div>
+					</div>
+					</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

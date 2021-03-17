@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.lang}"
+	th:lang="${session.lang}"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/layout">
+<body>
+<div layout:fragment="content">
+<form class="ui large form" id="memberUpdateSave" method="POST" action="memberUpdateSave"
+            data-parsley-validate="true"  enctype="multipart/form-data">
+	<div class="ui grid center aligned">
+		<div class="five wide column">
+		</div>
+		
+		<div class="five wide column">
+			<div class="field center aligned">
+				<div class="ui grid">
+						<a href="#"><img th:src="${row.photo}" id="viewphoto" title="클릭 하면 이미지 변경 "></a>
+						<input type="hidden" name="oldphoto" th:value="${row.photo}"> 
+						<input type="file" id="imgfile" name="imgfile" style="display:none"> 
+				</div>
+			</div>
+		
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="mail icon"></i>
+					<input type="hidden" id="emailconfirm" name="emailconfirm" value="n">
+					<input type="email" id="email" name="email" placeholder="email"  th:value="${row.email}" readonly="readonly">
+				</div>
+			</div>
+		
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="id card outline icon"></i>
+					<input type="text" name="name" class="meminsertfocus"
+						maxlength="255" required placeholder="이름" th:value="${row.name}">
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="lock icon"></i>
+					<input type="password" name="password"
+						id="password" required data-parsley-validation-threshold="1"
+						placeholder="비밀번호"  th:value="${row.password}">
+					<input type="hidden" name="oldpassword" th:value="${row.password}">	
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="lock icon"></i>
+					<input type="password" name="repassword"
+						id="repassword" required data-parsley-validation-threshold="1"
+						placeholder="비밀번호 확인"  th:value="${row.password}">
+				</div>
+			</div>
+			
+			<div class="field">
+				<div class="fluid ui left icon input">
+					<i class="mobile alternate icon"></i>
+					<input type="text" name="phone1" required id="phone_Number" placeholder="모바일폰 번호"  th:value="${row.phone1}">
+				</div>
+			</div>
+			
+			<div class="field" style="margin-top:10px">
+				<div class="ui checkbox">
+  					<input type="checkbox" name="example">
+  					<label>Make my profile visible</label>
+				</div>
+			</div>
+			
+			<div class="field" style="margin-top:20px">
+				<span><button type="submit" id="membersavebtn" class="ui primary basic button" style="width:48%">저장</button></span>
+				<span><button type="button" class="ui negative  basic button" onclick="location.href='index'" style="width:48%">취소</button></span>
+			</div>
+			
+		</div>
+		<div class="five wide column">
+		
+		</div>
+	</div>
+</form>		
+</div>
+</body>
+</html>
+

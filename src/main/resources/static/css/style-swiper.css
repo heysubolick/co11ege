@@ -1,0 +1,89 @@
+/* Container */
+.style-swiper-container {
+	position:relative;
+}
+
+.style-swiper-slide-btn-wrap {
+	position:relative;
+}
+
+/* Slides */
+.style-swiper-slides {
+	display:flex;
+	overflow-x:auto;
+	scroll-snap-type:mandatory; /* Fallback if "x" not supported */
+	scroll-snap-type:x mandatory;
+	-ms-scroll-snap-type:mandatory;
+	-webkit-scroll-snap-type:mandatory;
+	-webkit-scroll-snap-destination:0% 0%;
+	-webkit-overflow-scrolling:touch;
+	/* Note:IE11 only supports touch - graceful fallback is standard scroll area */
+}
+.style-swiper-slides > * {
+	flex-shrink:0;
+	max-width:100%;
+	scroll-snap-align:start;
+}
+
+/* Buttons */
+.style-swiper-btn-prev, .style-swiper-btn-next {
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	z-index:1;
+	background-color:black;
+	border:0;
+	font-size:2em;
+	margin:0;
+	padding:0;
+	cursor:pointer;
+	color:#FFF;
+	padding:10px;
+	box-sizing:border-box;
+}
+.style-swiper-btn-prev {
+	left:0;
+}
+.style-swiper-btn-next {
+	right:0;
+}
+
+/* Pagination */
+.style-swiper-pagination-wrap {
+	text-align:center;
+}
+.style-swiper-pagination {
+	display:inline-block;
+}
+.style-swiper-page {
+	display:inline-block;
+	margin:5px;
+}
+.style-swiper-page button {
+	border:0;
+	width:40px;
+	height:10px;
+	border-radius:10px;
+	background-color:#888;
+	cursor:pointer;
+}
+.style-swiper-page.style-swiper-visible button {
+	background-color:#F80;
+}
+.style-swiper-page.style-swiper-active button {
+	background-color:#00F;
+}
+
+/* Scrollbar */
+.hide-scrollbar {
+	scrollbar-width:none; /* Firefox */
+	-ms-overflow-style:none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display:none;
+}
+
+/* Hidden */
+.style-swiper-hidden {
+	display:none;
+}

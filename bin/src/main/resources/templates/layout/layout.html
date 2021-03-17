@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${session.lang}" 
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head th:replace="fragments/header :: header">
+<title>Header</title>
+</head>
+<body>
+<div class="ui grid">
+  <div class="sixteen column row ui grid middle aligned center aligned" style="background-color:#3F7288;margin-top:10px">
+    <div class="column"><a href="#"><i class="home icon" onclick="location.href='/index'"  style="color:#ffffff"></i></a></div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column">&nbsp</div>
+    <div class="column"><a href="memberInsert"><span  style="color:#ffffff">회원가입</span></a></div>
+    <div class="column">
+    
+    	<div class="ui compact menu">
+			<div class="ui simple dropdown item">
+				<div th:if="${session.sessionemail==null}"><a href="login">로그인</a></div>
+				<div th:unless="${session.sessionemail==null}">
+					<img class="nicknameprofile" src="${session.sessionphoto}">
+                          <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="logout">logout</a> 
+						<a class="item" href="memberUpdate">정보수정</a> 
+					</div>
+				</div>
+			</div>
+		</div>
+    
+    </div>
+    <div class="column"> 
+    	
+    	<div class="ui floating dropdown labeled search icon button langdropdown">
+		  <i class="world icon"></i>
+		  <span th:if="${session.lang == 'kr'}">
+		  	<i class="kr flag"></i>
+		  </span>
+		  <span th:if="${session.lang == 'us'}">
+		  	<i class="us flag"></i>
+		  </span>
+		  <span th:if="${session.lang == 'cn'}">
+		  	<i class="cn flag"></i>
+		  </span>
+		  <span th:if="${session.lang == 'jp'}">
+		  	<i class="jp flag"></i>
+		  </span>
+		  
+		  <div class="menu">
+		    <div class="item"  data-value="kr"><i class="kr flag"> korea</i></div>
+		    <div class="item"  data-value="us"><i class="us flag"> english</i></div>
+		    <div class="item"  data-value="cn"><i class="cn flag"> china</i></div>
+		    <div class="item"  data-value="jp"><i class="jp flag"> japan</i></div>
+		  </div>
+		</div>
+    
+    </div>
+    <div class="column">&nbsp</div>
+  </div>
+</div>
+
+<div class="ui two column grid center aligned">
+	<div class="one wide column">
+		<div>1</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>end</div>
+	</div>
+	<div class="fifteen wide column">
+		<div layout:fragment="content"></div>
+	</div>
+</div>
+
+<!-- <div class="column row center aligned"> -->
+<!-- 	<footer th:replace="fragments/footer :: footerFragment"></footer> -->
+<!-- </div> -->
+</body>
+</html>

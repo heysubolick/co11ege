@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}"
+	th:lang="${session.lang}"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/layout">
+<div layout:fragment="content">
+<form class="ui large form" id="memberinsertform" method="POST" 
+            data-parsley-validate="true">
+	<div class="ui grid center aligned" style="margin-top:30px">
+			<h3>Index Page</h3>
+			<div class="row">
+			<p th:text="#{product}"></p>
+			<img src="/images/reply.png" style="width:20px">
+			</div>
+	</div>
+</form>		
+</div>
+</body>
+</html>
+

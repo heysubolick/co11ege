@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Header</title>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default" th:fragment="navigation">
+		<div class="row middle aligned center aligned"
+			style="background-color: #ff0000">
+			<div class="column"></div>
+			<div class="column">
+				<a href="{{ url_for('index') }}"><i class="home icon leftrow"
+					title="Home"></i></a>
+			</div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+
+			<div class="column">
+
+				<div class="ui compact menu videoassignment"
+					style="display: none; color: #ffffff; background-color: #3F7288; border: 0">
+					<div class="ui simple dropdown item">
+						<i class="th icon" title="배치" style="color: #ffffff"></i>
+						<div class="menu">
+							<div class="item videogrid1">Choice 1</div>
+							<div class="item videogrid2">Choice 2</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column"></div>
+
+			<div class="column">
+				<a href="#" id="topmenu" title="정보변경&로그아웃" style="color: #000000">
+					<img id="mainmyimg"
+					src="{{ url_for('static', filename=session['userphoto']) }}"
+					class="nicknameprofile">
+				</a>
+
+				<div class="ui sidebar inverted vertical menu right aligned"
+					id="topmenusub">
+					<div class="row menuitem">
+						<div class="ui internally  grid">
+							<div class="row">
+								<div class="seven wide column" style="margin-top: 30px">
+
+									<a href="#" title="이미지 변경"><img
+										src="{{ url_for('static', filename=session['userphoto']) }}"
+										id="myimg" class="nicknameprofileLage"></a>
+								</div>
+								<div class="nine wide column" style="margin-top: 60px">
+									{{session['name']}}<br> <a href="#" title="click"><label
+										id="changephoto">사진변경</label></a>
+								</div>
+								<form id="upload-file" role="form" action="sendQuestions"
+									method="post" enctype="multipart/form-data">
+									<input type="file" name="file" id="findfile"
+										style="display: none">
+									<button type="button" id="takechange"
+										class="ui primary basic button"
+										style="display: none; margin-left: 30px">변경</button>
+								</form>
+
+							</div>
+						</div>
+						<div class="row">
+							<hr width="100%">
+						</div>
+						<div class="row menuitem">
+							<a href="{{ url_for('signupupdate') }}">정보수정</a>
+						</div>
+
+						<div class="row menuitem">
+							<a href="{{ url_for('logout') }}">로그아웃</a>
+						</div>
+						<div class="row">
+							<hr width="100%">
+						</div>
+						{% if session['memlevel'] <= 3 %}
+						<div class="row menuitem">
+							<a href="{{ url_for('texttodb') }}">출석부toDB</a>
+						</div>
+						<div class="row menuitem">
+							Group 편성</a>
+						</div>
+						<div class="row menuitem">
+							<a href="{{ url_for('memberlist') }}">사용자 관리</a>
+						</div>
+						<div class="row">
+							<hr width="100%">
+						</div>
+						{% endif %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</body>
+
+</html>

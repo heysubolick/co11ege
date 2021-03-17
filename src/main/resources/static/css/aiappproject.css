@@ -1,0 +1,16 @@
+.nicknameprofile {
+    width: 20px;
+    height: 20px;
+    border:1px solid gray;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#viewphoto {
+    width: 70px;
+    height: 70px;
+    border:1px solid gray;
+    border-radius: 50%;
+    overflow: hidden;
+}
+

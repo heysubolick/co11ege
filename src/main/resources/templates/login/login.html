@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${session.lang}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="layout/layout">
+<head>
+<meta charset="UTF-8">
+<title data-th-text="tiele"></title>
+</head>
+<body>
+<div layout:fragment="content">
+	<form action="loginUp" method="POST">
+        <div class="fifteen wide column ui grid">
+        	<div class="five wide column">
+				<!-- left margin -->
+        	</div>
+        	<div class="five wide column" style="margin-top:20px">
+        		<div class="field center aligned">
+					<h3>Login</h3>
+				</div>
+        		<div class="fluid ui grid left icon input" style="margin-top:20px">
+		          	<input type="email" name="email" placeholder="E-mail address" required style="ime-mode:disable">
+		        </div>
+				
+				<div class="fluid ui grid left icon input center aligned">
+		          	<input type="password" name="password"  placeholder="비밀번호" required>
+		        </div>
+		        
+		        <div class="fluid ui grid input" style="margin-top:15px;font-size:8px">
+		        	<div style="width:50%;text-align:left">
+		        		<a href="#">비밀번호 찾기</a>
+		        	</div>
+		        	<div style="width:50%;text-align:right">
+		        		<a href="memberInsert">회원가입</a>
+		        	</div>
+	        	</div>
+		        
+		        <div class="fluid ui grid input" style="margin-top:30px;">
+		        	<div style="width:50%">
+		        		<button class="fluid ui primary basic button" type="submit">
+			            	<h3>Login</h3>
+			          	</button>
+		        	</div>
+		        	<div style="width:50%">
+		        		<button class="fluid ui negative basic button" type="button" onclick="location.href='index'">
+			            	<h3>Cancel</h3>
+			          	</button>
+		        	</div>
+	        	</div>
+	        	
+        	</div>
+        	<div class="five wide column">
+        		<!-- right margin -->
+        	</div>
+        </div>    
+		
+	</form>
+</div>
+</body>
+
+</html>
+
